@@ -31,6 +31,7 @@ class Foobar(object):
             return False
         
     def set(self , key, value):
+        # convert value to key and add to DB
         try:
             self.db[str(key)] = value
             self.dumpdb()
@@ -47,6 +48,7 @@ class Foobar(object):
             return False
     
     def delete(self, key):
+        # not in DB
         if not key in self.db:
             return False
         del self.db[key]
